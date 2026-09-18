@@ -4,123 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HeroPlumbers | Plumbing Problems? We Fix Them Fast</title>
-  <meta name="description" content="PIRB-registered plumbers in Johannesburg, Sandton, Alberton and Randburg. 30-minute response, upfront quotes, guaranteed work." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root {
-      --navy: #0b1f3a;
-      --navy-2: #123056;
-      --amber: #f5b301;
-      --amber-2: #ffd25a;
-      --ink: #102033;
-      --muted: #5b6b7c;
-      --paper: #f6f3ee;
-      --white: #fff;
-      --line: #e6 recede;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Inter, system-ui, sans-serif;
-      color: var(--ink);
-      background: var(--white);
-      line-height: 1.5;
-    }
-    a { color: inherit; }
-    .sample-bar {
-      background: #111;
-      color: #fff;
-      font-size: 12px;
-      letter-spacing: .02em;
-      text-align: center;
-      padding: 8px 16px;
-    }
-    .sample-bar b { color: var(--amber); }
-    header {
-      position: sticky; top: 0; z-index: 20;
-      background: rgba(11,31,58,.96);
-      backdrop-filter: blur(10px);
-      color: #fff;
-      border-bottom: 1px solid rgba(255,255,255,.08);
-    }
-    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
-    .nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; }
-    .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: -.03em; text-decoration: none; }
-    .mark {
-      width: 36px; height: 36px; border-radius: 10px;
-      background: var(--amber); color: var(--navy);
-      display: grid; place-items: center; font-weight: 800;
-    }
-    .nav-links { display: none; gap: 22px; font-size: 14px; opacity: .9; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      border: 0; border-radius: 999px; padding: 12px 18px;
-      font-weight: 700; text-decoration: none; cursor: pointer;
-    }
-    .btn-amber { background: var(--amber); color: var(--navy); }
-    .btn-ghost { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,.25); }
-    .btn-dark { background: var(--navy); color: #fff; }
-    .hero {
-      background:
-        linear-gradient(105deg, rgba(11,31,58,.88) 0%, rgba(11,31,58,.55) 48%, rgba(11,31,58,.35) 100%),
-        url("https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=1800&q=80") center/cover;
-      color: #fff;
-      padding: 56px 0 64px;
-    }
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(255,255,255,.1);
-      border: 1px solid rgba(255,255,255,.16);
-      border-radius: 999px; padding: 6px 12px;
-      font-size: 12px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
-    }
-    h1 { font-size: clamp(34px, 6vw, 64px); line-height: 1.02; letter-spacing: -.04em; margin: 16px 0 14px; max-width: 14ch; }
-    .lede { max-width: 52ch; color: rgba(255,255,255,.84); font-size: 17px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
-    .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 36px; }
-    .stat { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 14px 16px; }
-    .stat b { display: block; font-size: 22px; }
-    .stat span { font-size: 13px; opacity: .75; }
-    section { padding: 64px 0; }
-    .kicker { color: #b07d00; font-weight: 700; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; }
-    h2 { font-size: clamp(28px, 4vw, 42px); letter-spacing: -.03em; line-height: 1.1; margin: 8px 0 12px; }
-    .grid-4, .grid-3, .grid-2 { display: grid; gap: 16px; }
-    .card {
-      background: var(--paper); border-radius: 20px; padding: 22px;
-      border: 1px solid #eee7da;
-    }
-    .card h3 { font-size: 18px; margin-bottom: 6px; }
-    .card p { color: var(--muted); font-size: 14px; }
-    .icon { width: 42px; height: 42px; border-radius: 12px; background: #fff; display: grid; place-items: center; margin-bottom: 14px; font-size: 20px; }
-    .process { background: var(--navy); color: #fff; }
-    .steps { display: grid; gap: 14px; margin-top: 28px; }
-    .step { display: grid; grid-template-columns: 48px 1fr; gap: 14px; align-items: start; }
-    .num { width: 48px; height: 48px; border-radius: 14px; background: var(--amber); color: var(--navy); display: grid; place-items: center; font-weight: 800; }
-    .reviews { background: var(--paper); }
-    .quote { background: #fff; border-radius: 20px; padding: 22px; }
-    .stars { color: #e0a000; margin-bottom: 10px; }
-    .who { margin-top: 14px; font-size: 13px; color: var(--muted); }
-    .areas { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-    .chip { background: #fff; border: 1px solid #eadfcd; border-radius: 999px; padding: 8px 12px; font-size: 13px; font-weight: 600; }
-    footer { background: #081627; color: rgba(255,255,255,.75); padding: 28px 0 110px; font-size: 13px; }
-    .sticky {
-      position: fixed; left: 0; right: 0; bottom: 0; z-index: 30;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
-      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
-      background: rgba(8,22,39,.94); backdrop-filter: blur(12px);
-    }
-    .sticky .btn { width: 100%; }
-    @media (min-width: 760px) {
-      .nav-links { display: flex; }
-      .stats { grid-template-columns: repeat(4, 1fr); }
-      .grid-4 { grid-template-columns: repeat(4, 1fr); }
-      .grid-3 { grid-template-columns: repeat(3, 1fr); }
-      .grid-2 { grid-template-columns: repeat(2, 1fr); }
-      .steps { grid-template-columns: repeat(4, 1fr); }
-      .step { grid-template-columns: 1fr; }
-      .sticky { display: none; }
+    :root { --navy:#0b1f3a; --amber:#f5b301; --ink:#102033; --muted:#5b6b7c; --paper:#f6f3ee; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.5}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .sample-bar{background:#111;color:#fff;font-size:12px;text-align:center;padding:8px 16px}
+    .sample-bar b{color:var(--amber)}
+    header{position:sticky;top:0;z-index:20;background:rgba(11,31,58,.96);color:#fff}
+    .wrap{width:min(1120px,calc(100% - 32px));margin:0 auto}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800}
+    .mark{width:36px;height:36px;border-radius:10px;background:var(--amber);color:var(--navy);display:grid;place-items:center;font-weight:800}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:12px 18px;font-weight:700}
+    .btn-amber{background:var(--amber);color:var(--navy)}
+    .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.25)}
+    .btn-dark{background:var(--navy);color:#fff}
+    .hero{position:relative;color:#fff;min-height:78vh;display:flex;align-items:flex-end;padding:56px 0 48px}
+    .hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,31,58,.2),rgba(11,31,58,.82))}
+    .hero .wrap{position:relative;z-index:1}
+    h1{font-size:clamp(34px,6vw,64px);line-height:1.02;letter-spacing:-.04em;margin:12px 0 14px;max-width:14ch}
+    .lede{max-width:52ch;color:rgba(255,255,255,.86)}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+    .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:28px}
+    .stat{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:14px 16px}
+    .stat b{display:block;font-size:20px}
+    section{padding:64px 0}
+    .kicker{color:#b07d00;font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+    h2{font-size:clamp(28px,4vw,42px);letter-spacing:-.03em;line-height:1.1;margin:8px 0 12px}
+    .grid-2{display:grid;gap:16px}
+    .shot{border-radius:20px;overflow:hidden;background:var(--paper)}
+    .shot img{width:100%;height:260px;object-fit:cover}
+    .shot .cap{padding:16px}
+    .shot p{color:var(--muted);font-size:14px}
+    .process{background:var(--navy);color:#fff}
+    .steps{display:grid;gap:14px;margin-top:28px}
+    .num{width:48px;height:48px;border-radius:14px;background:var(--amber);color:var(--navy);display:grid;place-items:center;font-weight:800;margin-bottom:10px}
+    .card{background:var(--paper);border-radius:20px;padding:22px}
+    .areas{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+    .chip{background:#fff;border:1px solid #eadfcd;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:600}
+    footer{background:#081627;color:rgba(255,255,255,.75);padding:28px 0 110px;font-size:13px}
+    .sticky{position:fixed;left:0;right:0;bottom:0;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 12px;background:rgba(8,22,39,.94)}
+    .sticky .btn{width:100%;text-align:center}
+    @media(min-width:760px){
+      .stats{grid-template-columns:repeat(4,1fr)}
+      .grid-2{grid-template-columns:repeat(2,1fr)}
+      .steps{grid-template-columns:repeat(4,1fr)}
+      .sticky{display:none}
     }
   </style>
 </head>
@@ -129,22 +64,15 @@
   <header>
     <div class="wrap nav">
       <a class="logo" href="#top"><span class="mark">H</span> HeroPlumbers</a>
-      <nav class="nav-links">
-        <a href="#services">Services</a>
-        <a href="#process">How it works</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#areas">Areas</a>
-      </nav>
       <a class="btn btn-amber" href="tel:+27703220416">Call 070 322 0416</a>
     </div>
   </header>
-
   <main id="top">
     <section class="hero">
+      <img class="bg" src="hero.jpg" alt="HeroPlumbers technician repairing kitchen pipes" />
       <div class="wrap">
-        <div class="eyebrow">Johannesburg · Sandton · Alberton · Randburg</div>
         <h1>Plumbing problems? We fix them fast.</h1>
-        <p class="lede">PIRB-registered plumbers for leaks, blocked drains, toilets, geysers and emergency call-outs. Clear quote before we start. Pay only what was agreed.</p>
+        <p class="lede">PIRB-registered plumbers for leaks, blocked drains, toilets, geysers and emergency call-outs across Johannesburg.</p>
         <div class="hero-actions">
           <a class="btn btn-amber" href="tel:+27703220416">Call now — 24/7</a>
           <a class="btn btn-ghost" href="https://wa.me/27703220416">WhatsApp a plumber</a>
@@ -157,62 +85,46 @@
         </div>
       </div>
     </section>
-
-    <section id="services">
+    <section>
       <div class="wrap">
-        <div class="kicker">What we handle</div>
-        <h2>From a dripping tap to a burst geyser.</h2>
-        <p style="color:var(--muted);max-width:58ch;margin-bottom:24px;">Same-day help for homes and businesses across Johannesburg. We arrive, inspect, quote, then fix — and we leave it clean.</p>
-        <div class="grid-4">
-          <article class="card"><div class="icon">💧</div><h3>Leak repairs</h3><p>Burst pipes, hidden leaks and dripping fittings found and sealed properly.</p></article>
-          <article class="card"><div class="icon">🌀</div><h3>Blocked drains</h3><p>Toilets, sinks, showers and main lines cleared and tested before we leave.</p></article>
-          <article class="card"><div class="icon">🔥</div><h3>Geysers</h3><p>No hot water, leaking cylinder or replacement — with compliance where required.</p></article>
-          <article class="card"><div class="icon">🚿</div><h3>Bathrooms & kitchens</h3><p>Taps, mixers, toilets, basins and vanity work with tidy finishing.</p></article>
+        <div class="kicker">The work</div>
+        <h2>Plumbing photos, not filler stock.</h2>
+        <div class="grid-2" style="margin-top:24px">
+          <article class="shot">
+            <img src="hero.jpg" alt="Leak and pipe repair under a sink" />
+            <div class="cap"><h3>Leaks, drains and bathrooms</h3><p>Burst pipes, blocked drains, taps and toilets fixed on site.</p></div>
+          </article>
+          <article class="shot">
+            <img src="geyser.jpg" alt="Geyser service in a Johannesburg home" />
+            <div class="cap"><h3>Geysers</h3><p>No hot water, leaking cylinder or replacement — with compliance where required.</p></div>
+          </article>
         </div>
       </div>
     </section>
-
-    <section class="process" id="process">
+    <section class="process">
       <div class="wrap">
-        <div class="kicker" style="color:var(--amber-2)">How it works</div>
+        <div class="kicker" style="color:#ffd25a">How it works</div>
         <h2>No shortcuts. No surprises on the bill.</h2>
         <div class="steps">
-          <div class="step"><div class="num">01</div><div><h3>Contact us</h3><p>Call or WhatsApp. Tell us what’s leaking, blocked or broken.</p></div></div>
-          <div class="step"><div class="num">02</div><div><h3>Inspection</h3><p>A plumber arrives, finds the fault and explains the fix in plain language.</p></div></div>
-          <div class="step"><div class="num">03</div><div><h3>Upfront quote</h3><p>Parts and labour agreed before work starts. No inflated extras.</p></div></div>
-          <div class="step"><div class="num">04</div><div><h3>Repair & guarantee</h3><p>We fix it, test it, clean up, and stand behind the work.</p></div></div>
+          <div><div class="num">01</div><h3>Contact us</h3><p>Call or WhatsApp.</p></div>
+          <div><div class="num">02</div><h3>Inspection</h3><p>We find the fault.</p></div>
+          <div><div class="num">03</div><h3>Upfront quote</h3><p>Agreed before work starts.</p></div>
+          <div><div class="num">04</div><h3>Repair & guarantee</h3><p>Tested and cleaned up.</p></div>
         </div>
       </div>
     </section>
-
-    <section class="reviews" id="reviews">
+    <section>
       <div class="wrap">
-        <div class="kicker">Proof, not promises</div>
-        <h2>What Johannesburg customers say.</h2>
-        <div class="grid-3" style="margin-top:24px">
-          <blockquote class="quote"><div class="stars">★★★★★</div><p>“Arrived in 20 mins for a water emergency, very professional, excellent work and very friendly. Very reasonable rates.”</p><div class="who">Andrew Kiddle · Google</div></blockquote>
-          <blockquote class="quote"><div class="stars">★★★★★</div><p>“Guys were quick, and left it neat and clean. Very happy.”</p><div class="who">Andrew Thurston · Google</div></blockquote>
-          <blockquote class="quote"><div class="stars">★★★★★</div><p>“Very friendly and sorted the job without fuss. Would use them again.”</p><div class="who">Mandy Hepburn · Google</div></blockquote>
-        </div>
-      </div>
-    </section>
-
-    <section id="areas">
-      <div class="wrap">
-        <div class="kicker">Service area</div>
+        <div class="kicker">Areas</div>
         <h2>Local plumbers across JHB.</h2>
-        <p style="color:var(--muted);max-width:54ch">HeroPlumbers supports households and businesses throughout Johannesburg, Alberton, Sandton and Randburg.</p>
         <div class="areas">
           <span class="chip">Sandton</span><span class="chip">Alberton</span><span class="chip">Randburg</span>
           <span class="chip">Germiston</span><span class="chip">Hyde Park</span><span class="chip">Morningside</span>
-          <span class="chip">Meyersdal</span><span class="chip">Westcliff</span>
         </div>
-        <div class="card" style="margin-top:28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
-          <div>
-            <h3>Need a plumber now?</h3>
-            <p>Call 070 322 0416 or send a WhatsApp. Emergencies are prioritised.</p>
-          </div>
-          <div style="display:flex;gap:8px;flex-wrap:wrap">
+        <div class="card" style="margin-top:28px">
+          <h3>Need a plumber now?</h3>
+          <p>Call 070 322 0416 or send a WhatsApp.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
             <a class="btn btn-dark" href="tel:+27703220416">Call 070 322 0416</a>
             <a class="btn btn-amber" href="https://wa.me/27703220416">WhatsApp</a>
           </div>
@@ -220,11 +132,7 @@
       </div>
     </section>
   </main>
-
-  <footer>
-    <div class="wrap">Sample concept by Symmetra for HeroPlumbers · 070 322 0416 · Johannesburg</div>
-  </footer>
-
+  <footer><div class="wrap">Sample concept by Symmetra for HeroPlumbers</div></footer>
   <div class="sticky">
     <a class="btn btn-ghost" href="tel:+27703220416">Call</a>
     <a class="btn btn-amber" href="https://wa.me/27703220416">WhatsApp</a>
